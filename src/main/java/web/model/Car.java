@@ -2,20 +2,24 @@ package web.model;
 
 public class Car {
 
+    private String brand;
+
     private String model;
 
-    private String driver;
+    private int horsePower;
 
-    private int maxSpeed;
-
-
-    public Car() {
+    public Car(String brand, String model, int horsePower) {
+        this.brand = brand;
+        this.model = model;
+        this.horsePower = horsePower;
     }
 
-    public Car(String model, String driver, int maxSpeed) {
-        this.model = model;
-        this.driver = driver;
-        this.maxSpeed = maxSpeed;
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getModel() {
@@ -26,19 +30,16 @@ public class Car {
         this.model = model;
     }
 
-    public String getDriver() {
-        return driver;
+    public int getHorsePower() {
+        return horsePower;
     }
 
-    public void setDriver(String driver) {
-        this.driver = driver;
+    public void setHorsePower(int horsePower) {
+        this.horsePower = horsePower;
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    @Override
+    public String toString() {
+        return "Car:   " + brand + "     " + model + "     Power = " + horsePower + "h/p";
     }
 }

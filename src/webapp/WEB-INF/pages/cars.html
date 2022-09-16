@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Cars</title>
@@ -10,6 +9,24 @@
   <th:block th:each="msg : ${messages}">
     <h1 th:text="${msg}"></h1>
   </th:block>
+  <br/>
+  <hr/>
+  <table id="example" class="table table-bordered" style="width: 50%" border="3">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Power (h/p)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="car : ${table}">
+        <td th:text="${car.getBrand}">Brand</td>
+        <td th:text="${car.getModel}">Model</td>
+        <td th:text="${car.getHorsePower}">HorsePower</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <a href="/spring_mvc_war_exploded">Start_Page</a>
 </body>
