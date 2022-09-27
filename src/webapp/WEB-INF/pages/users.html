@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Cars</title>
+  <title>USERS</title>
 </head>
 <body>
 <div>
@@ -14,20 +14,20 @@
   <table id="example" class="table table-bordered" style="width: 50%" border="3">
     <thead>
       <tr>
-        <th>Brand</th>
-        <th>Model</th>
-        <th>Power (h/p)</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
       </tr>
     </thead>
     <tbody>
-      <tr th:each="car : ${table}">
-        <td th:text="${car.getBrand}">Brand</td>
-        <td th:text="${car.getModel}">Model</td>
-        <td th:text="${car.getHorsePower}">HorsePower</td>
+      <tr th:each="user : ${table}">
+        <td th:text="${user.name}">Name</td>
+        <td th:text="${user.surname}">Surname</td>
+        <td th:text="${user.age}">Age</td>
       </tr>
     </tbody>
   </table>
 </div>
-<a href="/spring_mvc_war_exploded">Start_Page</a>
+<a href="/PP_2_3_1_war_exploded">Start_Page</a>
 </body>
 </html>

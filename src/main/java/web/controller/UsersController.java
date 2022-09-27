@@ -5,29 +5,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.service.CarService;
+import web.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class CarsController {
+public class UsersController {
 
-    private final CarService carService;
+    private final UserService userService;
 
     @Autowired
-    public CarsController(CarService carService) {
-        this.carService = carService;
+    public UsersController(UserService userService) {
+        this.userService = userService;
     }
 
-    @GetMapping(value = "/cars")
+    @GetMapping(value = "/users")
     public String printWelcome(ModelMap model,
                                @RequestParam(value = "count", required = false) String count) {
         List<String> messages = new ArrayList<>();
         messages.add("Hello!");
-        messages.add("I'm Cars Table");
+        messages.add("I'm Users Table");
         model.addAttribute("messages", messages);
-        model.addAttribute("table", carService.refreshTable(count, messages));
-        return "cars";
+        model.addAttribute("table", userService.refreshTable(count, messages));
+        return "users";
     }
 }
