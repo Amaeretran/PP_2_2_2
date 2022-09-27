@@ -1,12 +1,12 @@
 package web.dao;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class CarDAOImpl implements CarDAO {
     @Override
     public List<Car> refreshTable(String count, List<String> messages) {
